@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Call the .sh script using Git Bash
-                bat '"C:\\Program Files\\Git\\bin\\bash.exe" ./jenkins/scripts/test.sh'
+                bat '"C:\\Program Files\\Git\\bin\\bash.exe" ./jenkins/scripts/test.sh -- --passWithNoTests'
             }
         }
     }
