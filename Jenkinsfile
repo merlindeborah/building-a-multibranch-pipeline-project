@@ -6,13 +6,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                // Install dependencies using npm
                 bat 'npm install'
             }
         }
         stage('Test') {
             steps {
-                // Call the .sh script using Git Bash
-                bat '"C:\\Program Files\\Git\\bin\\bash.exe" ./jenkins/scripts/test.sh'
+                // Use a batch file instead of a shell script for Windows
+                bat 'jenkins\\scripts\\test.bat'
             }
         }
     }
