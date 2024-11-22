@@ -11,8 +11,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // Use 'sh' step to call Git Bash and run the .sh script
-                bat '"C:\\Program Files\\Git\\bin\\bash.exe" ./jenkins/scripts/test.sh'
+                // Use 'bat' step to run Git Bash to execute the .sh script
+                bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "./jenkins/scripts/test.sh"'
             }
         }
     }
