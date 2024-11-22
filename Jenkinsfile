@@ -11,8 +11,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // Run the .sh script using Git Bash, add --passWithNoTests to allow success even with no tests
-                bat '"C:\\Program Files\\Git\\bin\\bash.exe" --login -c "./jenkins/scripts/test.sh" -- --passWithNoTests'
+                // Use 'sh' step to call Git Bash and run the .sh script
+                sh '"C:\\Program Files\\Git\\bin\\bash.exe" ./jenkins/scripts/test.sh'
             }
         }
     }

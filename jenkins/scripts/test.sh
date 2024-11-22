@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-# Optional logging, explaining about cross-env installation
 echo 'The following "npm" command (if executed) installs the "cross-env"'
 echo 'dependency into the local "node_modules" directory, which will ultimately'
 echo 'be stored in the Jenkins home directory. As described in'
@@ -14,11 +13,8 @@ set -x
 # npm install --save-dev cross-env
 set +x
 
-# Logging to explain testing command
 echo 'The following "npm" command tests that your simple Node.js/React'
 echo 'application renders satisfactorily. This command actually invokes the test'
 echo 'runner Jest (https://facebook.github.io/jest/).'
-
-# Run the npm test command, passing all arguments including --passWithNoTests
 set -x
-npm test "$@"
+npm test
