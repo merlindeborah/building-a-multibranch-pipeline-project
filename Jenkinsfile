@@ -11,8 +11,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // Call the .sh script using Git Bash
-                bat './jenkins/scripts/test.bat'
+                // Correctly call the .bat file
+                bat 'jenkins\\scripts\\test.bat'
             }
         }
     }
